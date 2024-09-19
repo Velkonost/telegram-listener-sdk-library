@@ -2,8 +2,9 @@ package velkonost.telegram.sdk.listener
 
 import kotlinx.coroutines.flow.Flow
 import velkonost.telegram.sdk.listener.client.TelegramClient
-import velkonost.telegram.sdk.listener.exception.TGListenerException
+import velkonost.telegram.sdk.listener.client.TelegramException
 import java.io.File
+import java.nio.file.Files
 
 object TGListenerSDK {
 
@@ -16,12 +17,8 @@ object TGListenerSDK {
         databaseDirectory: String = "database",
         filesDirectory: String = "files",
     ) {
-        val projectDir = File("").absolutePath
-        val tdLibPath = "$projectDir/telegram-sdk/tdlib/src/main/libs"
-
         val osName = System.getProperty("os.name").lowercase()
         val arch = System.getProperty("os.arch").lowercase()
-
         val libFolder = when {
             osName.contains("linux") && arch.contains("x86_64") -> "linux_x64"
             osName.contains("linux") && arch.contains("arm64") -> "linux_arm64"
@@ -38,14 +35,24 @@ object TGListenerSDK {
             else -> throw UnsupportedOperationException("Unsupported OS or architecture: $osName-$arch")
         }
 
-        val libPath = "$tdLibPath/$libFolder/libtdjni.$libExtension"
+        val classLoader = this::class.java
+        val libResource = classLoader.getResource("/libs/$libFolder/libtdjni.$libExtension")
 
-        val libFile = File(libPath)
-        if (!libFile.exists()) {
-            throw IllegalStateException("Library file not found at $libPath")
+        if (libResource != null) {
+            val tempFile = Files.createTempFile("libtdjni", ".dylib").toFile()
+            tempFile.deleteOnExit()
+
+            libResource.openStream().use { input ->
+                tempFile.outputStream().use { output ->
+                    input.copyTo(output)
+                }
+            }
+
+            System.load(tempFile.absolutePath)
+            println("TdLib loaded successfully")
+        } else {
+            throw IllegalStateException("TdLib load fails")
         }
-
-        System.load(libFile.absolutePath)
 
         client = TelegramClient(
             apiId = apiId,
@@ -57,7 +64,7 @@ object TGListenerSDK {
     }
 
     fun startListenChats(chats: List<Pair<String, Long>>): Flow<Pair<String, String>> {
-        return client?.listenChats(chats) ?: throw TGListenerException("tg client is null")
+        return client?.listenChats(chats) ?: throw TelegramException.Error("tg client is null")
     }
 
 }

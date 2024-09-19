@@ -26,6 +26,8 @@ internal class TelegramClient(
 
     init {
         Client.setLogMessageHandler(0) { verbosityLevel, message -> Unit }
+        Client.execute(TdApi.SetLogVerbosityLevel(0))
+        Client.execute(TdApi.SetLogStream(TdApi.LogStreamEmpty()))
 
         updateEventsFlow = callbackFlow {
             val resultHandler = Client.ResultHandler { trySend(it) }
