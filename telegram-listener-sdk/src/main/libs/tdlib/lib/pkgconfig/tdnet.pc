@@ -1,0 +1,10 @@
+prefix=/Users/velkonost/IdeaProjects/ml-futures-bot/telegram-sdk/tdlib/src/main/tdlib
+
+Name: tdnet
+Description: Telegram Library - Net
+Version: 1.8.34
+
+CFlags: -I"${prefix}/include"
+Libs: -L"${prefix}/lib" -ltdnet
+Requires.private: tdutils tdactor
+Libs.private: -L"/opt/homebrew/Cellar/openssl@3/3.3.2/lib" -l:libssl.dylib -L"/opt/homebrew/Cellar/openssl@3/3.3.2/lib" -l:libcrypto.dylib -L"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib" -l:libz.tbd

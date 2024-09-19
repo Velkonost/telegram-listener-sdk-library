@@ -1,0 +1,9 @@
+prefix=/Users/velkonost/IdeaProjects/ml-futures-bot/telegram-sdk/tdlib/src/main/libs/build
+
+Name: tdjson_static
+Description: Telegram Library - JSON interface (static)
+Version: 1.8.34
+
+CFlags: -I"${prefix}/include"
+Libs: -L"${prefix}/lib" -ltdjson_static
+Requires.private: tdjson_private

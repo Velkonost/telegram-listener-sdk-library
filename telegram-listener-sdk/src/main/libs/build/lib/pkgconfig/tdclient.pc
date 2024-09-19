@@ -1,0 +1,9 @@
+prefix=/Users/velkonost/IdeaProjects/ml-futures-bot/telegram-sdk/tdlib/src/main/libs/build
+
+Name: tdclient
+Description: Telegram Library - C++ Interface
+Version: 1.8.34
+
+CFlags: -I"${prefix}/include"
+Libs: -L"${prefix}/lib" -ltdclient
+Requires.private: tdapi tdcore

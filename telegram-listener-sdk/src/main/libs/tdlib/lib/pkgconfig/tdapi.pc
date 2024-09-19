@@ -1,0 +1,10 @@
+prefix=/Users/velkonost/IdeaProjects/ml-futures-bot/telegram-sdk/tdlib/src/main/tdlib
+
+Name: tdapi
+Description: Telegram Library - API
+Version: 1.8.34
+
+CFlags: -I"${prefix}/include"
+Libs: -L"${prefix}/lib" -ltdapi
+Requires.private: tdutils
+Libs.private: -L"/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home/lib/server" -l:libjvm.dylib

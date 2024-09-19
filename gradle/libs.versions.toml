@@ -1,0 +1,25 @@
+[versions]
+telegram-listener-sdk = "0.0.1"
+kotlin = "2.0.0"
+coroutines = "1.7.3"
+serialization = "1.3.2"
+
+jupiter = "5.8.1"
+
+[libraries]
+## coroutines
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+## serialization
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+# gradle
+gradle-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradle-kotlinx-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+
+# tests
+jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jupiter"}
+jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jupiter"}
+
+[plugins]
+
