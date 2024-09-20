@@ -4,5 +4,5 @@ PRs welcome
 
 # How to use
 ```kotlin
-implementation("io.github.velkonost:technical-analysis:0.0.3")
+implementation("io.github.velkonost:technical-analysis:0.0.4")
 ```
