@@ -29,7 +29,7 @@ object TGListenerSDK {
         }
 
         val libExtension = when {
-            osName.contains("linux") -> "iso"
+            osName.contains("linux") -> "so"
             osName.contains("mac") && arch.contains("aarch64") -> "dylib"
             osName.contains("windows") && arch.contains("amd64") -> "dll"
             else -> throw UnsupportedOperationException("Unsupported OS or architecture: $osName-$arch")
@@ -39,7 +39,7 @@ object TGListenerSDK {
         val libResource = classLoader.getResource("/libs/$libFolder/libtdjni.$libExtension")
 
         if (libResource != null) {
-            val tempFile = Files.createTempFile("libtdjni", ".dylib").toFile()
+            val tempFile = Files.createTempFile("libtdjni", ".$libExtension").toFile()
             tempFile.deleteOnExit()
 
             libResource.openStream().use { input ->
