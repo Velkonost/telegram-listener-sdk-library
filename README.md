@@ -4,5 +4,5 @@ PRs welcome
 
 # How to use
 ```kotlin
-implementation("io.github.velkonost:telegram-listener-sdk:0.0.6")
+implementation("io.github.velkonost:telegram-listener-sdk:0.0.8")
 ```

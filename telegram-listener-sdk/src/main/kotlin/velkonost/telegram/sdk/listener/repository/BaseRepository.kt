@@ -17,7 +17,7 @@ internal abstract class BaseRepository(private val dataSource: Client) {
 
     protected inline fun <reified T : TdApi.Object> Flow<TdApi.Object>.getUpdatesFlowOfType() = filterIsInstance<T>()
 
-    private suspend inline fun <reified ExpectedResult : TdApi.Object, T : TdApi.Object> sendFunctionAsync(
+    protected suspend inline fun <reified ExpectedResult : TdApi.Object, T : TdApi.Object> sendFunctionAsync(
         function: TdApi.Function<T>
     ): ExpectedResult = suspendCoroutine { continuation ->
         val resultHandler: (TdApi.Object) -> Unit = { result ->

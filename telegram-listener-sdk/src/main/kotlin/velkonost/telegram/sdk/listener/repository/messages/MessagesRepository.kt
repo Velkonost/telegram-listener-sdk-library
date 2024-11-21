@@ -20,13 +20,27 @@ internal class MessagesRepository(
             .filter { message -> message.chatId in eligibleChats }
             .filter { includeOutgoing || !it.isOutgoing }
             .mapNotNull { message ->
+                val isReply = message.replyTo != null && message.replyTo is TdApi.MessageReplyToMessage
+                var replyMessageText: String? = null
+                if (isReply) {
+                    val repliedMessage = getMessage(
+                        chatId = message.chatId,
+                        messageId = (message.replyTo as TdApi.MessageReplyToMessage).messageId
+                    )
+                    replyMessageText = (repliedMessage.content as? TdApi.MessageText)?.text?.text
+                }
+
                 (message.content as? TdApi.MessageText)?.let { messageText ->
                     NewMessage(
                         chatId = message.chatId,
-                        text = messageText.text.text
+                        text = messageText.text.text,
+                        replyMessageText = replyMessageText
                     )
                 }
             }
     }
+
+    suspend fun getMessage(chatId: Long, messageId: Long): TdApi.Message =
+        this.sendFunctionAsync(TdApi.GetMessage(chatId, messageId))
 
 }

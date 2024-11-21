@@ -52,6 +52,7 @@ internal class TelegramClient(
                 launch()
             }
 
+
             awaitClose(block = { Unit })
         }.shareIn(
             scope = coroutineScope,
