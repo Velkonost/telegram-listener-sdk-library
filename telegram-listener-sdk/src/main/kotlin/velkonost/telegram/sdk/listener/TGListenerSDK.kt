@@ -3,6 +3,7 @@ package velkonost.telegram.sdk.listener
 import kotlinx.coroutines.flow.Flow
 import velkonost.telegram.sdk.listener.client.TelegramClient
 import velkonost.telegram.sdk.listener.client.TelegramException
+import velkonost.telegram.sdk.listener.model.NewMessage
 import java.io.File
 import java.nio.file.Files
 
@@ -63,8 +64,11 @@ object TGListenerSDK {
         )
     }
 
-    fun startListenChats(chats: List<Pair<String, Long>>): Flow<Pair<String, String>> {
-        return client?.listenChats(chats) ?: throw TelegramException.Error("tg client is null")
+    fun startListenChats(
+        includeOutgoing: Boolean = true,
+        chats: List<Long>
+    ): Flow<NewMessage> {
+        return client?.listenChats(includeOutgoing, chats) ?: throw TelegramException.Error("tg client is null")
     }
 
 }

@@ -1,25 +1,30 @@
 package velkonost.telegram.sdk.listener.repository.messages
 
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.mapNotNull
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.*
 import org.drinkless.tdlib.Client
 import org.drinkless.tdlib.TdApi
+import velkonost.telegram.sdk.listener.model.NewMessage
 import velkonost.telegram.sdk.listener.repository.BaseRepository
 
 internal class MessagesRepository(
     dataSource: Client,
 ) : BaseRepository(dataSource) {
 
-    fun subscribeMessages(source: Flow<TdApi.Object>, eligibleChats: List<Pair<String, Long>>): Flow<Pair<String, String>> {
+    fun subscribeMessages(
+        source: Flow<TdApi.Object>,
+        includeOutgoing: Boolean,
+        eligibleChats: List<Long>
+    ): Flow<NewMessage> {
         return source.getUpdatesFlowOfType<TdApi.UpdateNewMessage>()
             .mapNotNull { it.message }
+            .filter { message -> message.chatId in eligibleChats }
+            .filter { includeOutgoing || !it.isOutgoing }
             .mapNotNull { message ->
-                eligibleChats.firstOrNull { it.second == message.chatId }?.let { (chatTitle, chatId) ->
-                    (message.content as? TdApi.MessageText)?.let { messageText ->
-                        chatTitle to messageText.text.text
-                    }
+                (message.content as? TdApi.MessageText)?.let { messageText ->
+                    NewMessage(
+                        chatId = message.chatId,
+                        text = messageText.text.text
+                    )
                 }
             }
     }

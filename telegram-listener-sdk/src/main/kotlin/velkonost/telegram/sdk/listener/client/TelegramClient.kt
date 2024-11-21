@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.shareIn
 import org.drinkless.tdlib.Client
 import org.drinkless.tdlib.TdApi
 import velkonost.telegram.sdk.listener.config.TdLibParameters
+import velkonost.telegram.sdk.listener.model.NewMessage
 import velkonost.telegram.sdk.listener.repository.auth.AuthRepository
 import velkonost.telegram.sdk.listener.repository.messages.MessagesRepository
 
@@ -65,13 +66,20 @@ internal class TelegramClient(
         }
     }
 
-    fun listenChats(chats: List<Pair<String, Long>>): Flow<Pair<String, String>> {
-        val result = CompletableDeferred<Flow<Pair<String, String>>>()
+    fun listenChats(
+        includeOutgoing: Boolean,
+        chats: List<Long>
+    ): Flow<NewMessage> {
+        val result = CompletableDeferred<Flow<NewMessage>>()
         coroutineScope.launch {
             while (!result.isCompleted) {
                 delay(1000)
                 if (::messagesRepository.isInitialized) {
-                    val flow = messagesRepository.subscribeMessages(updateEventsFlow, chats)
+                    val flow = messagesRepository.subscribeMessages(
+                        source = updateEventsFlow,
+                        includeOutgoing = includeOutgoing,
+                        eligibleChats = chats
+                    )
                     result.complete(flow)
                 }
             }
