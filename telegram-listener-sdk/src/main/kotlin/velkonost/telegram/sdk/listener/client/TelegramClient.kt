@@ -13,7 +13,16 @@ import velkonost.telegram.sdk.listener.model.NewMessage
 import velkonost.telegram.sdk.listener.repository.auth.AuthRepository
 import velkonost.telegram.sdk.listener.repository.messages.MessagesRepository
 
-
+/**
+ * Internal client implementation that handles the communication with TDLib.
+ * This class manages the lifecycle of the TDLib client, authentication, and message subscription.
+ *
+ * @property apiId The API ID for Telegram API
+ * @property apiHash The API hash for Telegram API
+ * @property phoneNumber The phone number associated with the Telegram account
+ * @property databaseDirectory The directory for TDLib database files
+ * @property filesDirectory The directory for downloaded files
+ */
 internal class TelegramClient(
     apiId: Int, apiHash: String, phoneNumber: String,
     databaseDirectory: String,
@@ -67,6 +76,15 @@ internal class TelegramClient(
         }
     }
 
+    /**
+     * Starts listening to messages from specified chats.
+     * This method creates a Flow of [NewMessage] objects that will emit new messages as they arrive.
+     * The method waits for the messages repository to be initialized before returning the flow.
+     *
+     * @param includeOutgoing Whether to include outgoing messages in the flow
+     * @param chats List of chat IDs to listen to
+     * @return Flow of [NewMessage] objects
+     */
     fun listenChats(
         includeOutgoing: Boolean,
         chats: List<Long>

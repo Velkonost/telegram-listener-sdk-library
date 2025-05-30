@@ -12,7 +12,7 @@ java {
     withSourcesJar()
 }
 
-group = "io.github.velkonost"
+group = "com.velkonost"
 version = libs.versions.telegram.listener.sdk.get()
 description = "Simple TDLib implementation in Kotlin for listen messages"
 
@@ -22,7 +22,7 @@ publishing {
         create<MavenPublication>("release") {
             from(components["java"])
 
-            groupId = "io.github.velkonost"
+            groupId = "com.velkonost"
             artifactId = "telegram-listener-sdk"
 
             pom {

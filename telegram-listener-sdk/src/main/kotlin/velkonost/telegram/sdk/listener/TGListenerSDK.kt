@@ -7,10 +7,28 @@ import velkonost.telegram.sdk.listener.model.NewMessage
 import java.io.File
 import java.nio.file.Files
 
+/**
+ * Main entry point for the Telegram Listener SDK.
+ * This object provides functionality to interact with the Telegram API using TDLib.
+ * It handles the initialization of the native library and provides methods to listen to chat messages.
+ */
 object TGListenerSDK {
 
     private var client: TelegramClient? = null
 
+    /**
+     * Initializes the Telegram client with the provided credentials and configuration.
+     * This method must be called before using any other functionality of the SDK.
+     * It handles loading the appropriate native library based on the operating system and architecture.
+     *
+     * @param apiId The API ID obtained from Telegram's developer portal
+     * @param apiHash The API hash obtained from Telegram's developer portal
+     * @param phoneNumber The phone number associated with the Telegram account
+     * @param databaseDirectory The directory where TDLib will store its database files
+     * @param filesDirectory The directory where TDLib will store downloaded files
+     * @throws UnsupportedOperationException if the current OS or architecture is not supported
+     * @throws IllegalStateException if the native library fails to load
+     */
     fun setup(
         apiId: Int,
         apiHash: String,
@@ -64,6 +82,15 @@ object TGListenerSDK {
         )
     }
 
+    /**
+     * Starts listening to messages from specified chats.
+     * Returns a Flow of [NewMessage] objects that can be collected to receive new messages.
+     *
+     * @param includeOutgoing Whether to include outgoing messages in the flow
+     * @param chats List of chat IDs to listen to
+     * @return Flow of [NewMessage] objects
+     * @throws TelegramException.Error if the client is not initialized (setup() was not called)
+     */
     fun startListenChats(
         includeOutgoing: Boolean = true,
         chats: List<Long>

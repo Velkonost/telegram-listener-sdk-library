@@ -1,5 +1,5 @@
 [versions]
-telegram-listener-sdk = "0.0.17"
+telegram-listener-sdk = "0.1.0"
 
 kotlin = "2.0.0"
 coroutines = "1.7.3"

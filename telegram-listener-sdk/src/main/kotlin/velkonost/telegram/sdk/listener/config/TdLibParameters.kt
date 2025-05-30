@@ -1,5 +1,25 @@
 package velkonost.telegram.sdk.listener.config
 
+/**
+ * Data class containing all parameters required for initializing TDLib.
+ * These parameters configure various aspects of TDLib's behavior and functionality.
+ *
+ * @property useTestDc Whether to use the test data center
+ * @property databaseDirectory Directory where TDLib will store its database files
+ * @property filesDirectory Directory where TDLib will store downloaded files
+ * @property databaseEncryptionKey Optional encryption key for the database
+ * @property useFileDatabase Whether to use the file database
+ * @property useChatInfoDatabase Whether to use the chat info database
+ * @property useMessageDatabase Whether to use the message database
+ * @property useSecretChats Whether to enable secret chats
+ * @property apiId The API ID obtained from Telegram's developer portal
+ * @property apiHash The API hash obtained from Telegram's developer portal
+ * @property systemLanguageCode The language code to use for the system
+ * @property deviceModel The model of the device
+ * @property systemVersion The version of the operating system
+ * @property applicationVersion The version of the application
+ * @property phoneNumber The phone number associated with the Telegram account
+ */
 internal data class TdLibParameters(
     val useTestDc: Boolean = false,
     val databaseDirectory: String,
