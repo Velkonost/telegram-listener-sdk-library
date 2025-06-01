@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Chat</title>
+    <link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../../index.html">
+                    telegram-listener-sdk
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.1.0        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":telegram-listener-sdk:dokkaHtml/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":telegram-listener-sdk:dokkaHtml/main"
+                                       data-filter=":telegram-listener-sdk:dokkaHtml/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    telegram-listener-sdk
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="telegram-listener-sdk::org.drinkless.tdlib/TdApi.Chat///PointingToDeclaration//377608258">
+  <div class="breadcrumbs"><a href="../../../../index.html">telegram-listener-sdk</a><span class="delimiter">/</span><a href="../../index.html">org.drinkless.tdlib</a><span class="delimiter">/</span><a href="../index.html">TdApi</a><span class="delimiter">/</span><span class="current">Chat</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Chat</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">Chat</a> : <a href="../-object/index.html">TdApi.Object</a></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="525161000%2FConstructors%2F377608258" anchor-label="Chat" id="525161000%2FConstructors%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-chat.html"><span><span>Chat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="525161000%2FConstructors%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">type<span class="token operator">: </span><a href="../-chat-type/index.html">TdApi.ChatType</a><span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">photo<span class="token operator">: </span><a href="../-chat-photo-info/index.html">TdApi.ChatPhotoInfo</a><span class="token punctuation">, </span></span><span class="parameter ">accentColorId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">backgroundCustomEmojiId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">profileAccentColorId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">profileBackgroundCustomEmojiId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">permissions<span class="token operator">: </span><a href="../-chat-permissions/index.html">TdApi.ChatPermissions</a><span class="token punctuation">, </span></span><span class="parameter ">lastMessage<span class="token operator">: </span><a href="../-message/index.html">TdApi.Message</a><span class="token punctuation">, </span></span><span class="parameter ">positions<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="../-chat-position/index.html">TdApi.ChatPosition</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">chatLists<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="../-chat-list/index.html">TdApi.ChatList</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">messageSenderId<span class="token operator">: </span><a href="../-message-sender/index.html">TdApi.MessageSender</a><span class="token punctuation">, </span></span><span class="parameter ">blockList<span class="token operator">: </span><a href="../-block-list/index.html">TdApi.BlockList</a><span class="token punctuation">, </span></span><span class="parameter ">hasProtectedContent<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">isTranslatable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">isMarkedAsUnread<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">viewAsTopics<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">hasScheduledMessages<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">canBeDeletedOnlyForSelf<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">canBeDeletedForAllUsers<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">canBeReported<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">defaultDisableNotification<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">unreadCount<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">lastReadInboxMessageId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">lastReadOutboxMessageId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">unreadMentionCount<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">unreadReactionCount<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">notificationSettings<span class="token operator">: </span><a href="../-chat-notification-settings/index.html">TdApi.ChatNotificationSettings</a><span class="token punctuation">, </span></span><span class="parameter ">availableReactions<span class="token operator">: </span><a href="../-chat-available-reactions/index.html">TdApi.ChatAvailableReactions</a><span class="token punctuation">, </span></span><span class="parameter ">messageAutoDeleteTime<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">emojiStatus<span class="token operator">: </span><a href="../-emoji-status/index.html">TdApi.EmojiStatus</a><span class="token punctuation">, </span></span><span class="parameter ">background<span class="token operator">: </span><a href="../-chat-background/index.html">TdApi.ChatBackground</a><span class="token punctuation">, </span></span><span class="parameter ">themeName<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">actionBar<span class="token operator">: </span><a href="../-chat-action-bar/index.html">TdApi.ChatActionBar</a><span class="token punctuation">, </span></span><span class="parameter ">businessBotManageBar<span class="token operator">: </span><a href="../-business-bot-manage-bar/index.html">TdApi.BusinessBotManageBar</a><span class="token punctuation">, </span></span><span class="parameter ">videoChat<span class="token operator">: </span><a href="../-video-chat/index.html">TdApi.VideoChat</a><span class="token punctuation">, </span></span><span class="parameter ">pendingJoinRequests<span class="token operator">: </span><a href="../-chat-join-requests-info/index.html">TdApi.ChatJoinRequestsInfo</a><span class="token punctuation">, </span></span><span class="parameter ">replyMarkupMessageId<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">draftMessage<span class="token operator">: </span><a href="../-draft-message/index.html">TdApi.DraftMessage</a><span class="token punctuation">, </span></span><span class="parameter ">clientData<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1877319611%2FProperties%2F377608258" anchor-label="accentColorId" id="1877319611%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="accent-color-id.html"><span>accent</span><wbr></wbr><span>Color</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1877319611%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="accent-color-id.html">accentColorId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-79207790%2FProperties%2F377608258" anchor-label="actionBar" id="-79207790%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="action-bar.html"><span>action</span><wbr></wbr><span><span>Bar</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-79207790%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="action-bar.html">actionBar</a><span class="token operator">: </span><a href="../-chat-action-bar/index.html">TdApi.ChatActionBar</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-836393398%2FProperties%2F377608258" anchor-label="availableReactions" id="-836393398%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="available-reactions.html"><span>available</span><wbr></wbr><span><span>Reactions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-836393398%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="available-reactions.html">availableReactions</a><span class="token operator">: </span><a href="../-chat-available-reactions/index.html">TdApi.ChatAvailableReactions</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-630039971%2FProperties%2F377608258" anchor-label="background" id="-630039971%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="background.html"><span><span>background</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-630039971%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="background.html">background</a><span class="token operator">: </span><a href="../-chat-background/index.html">TdApi.ChatBackground</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1087597549%2FProperties%2F377608258" anchor-label="backgroundCustomEmojiId" id="1087597549%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="background-custom-emoji-id.html"><span>background</span><wbr></wbr><span>Custom</span><wbr></wbr><span>Emoji</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1087597549%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="background-custom-emoji-id.html">backgroundCustomEmojiId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1165640316%2FProperties%2F377608258" anchor-label="blockList" id="-1165640316%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="block-list.html"><span>block</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1165640316%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="block-list.html">blockList</a><span class="token operator">: </span><a href="../-block-list/index.html">TdApi.BlockList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1101520356%2FProperties%2F377608258" anchor-label="businessBotManageBar" id="1101520356%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="business-bot-manage-bar.html"><span>business</span><wbr></wbr><span>Bot</span><wbr></wbr><span>Manage</span><wbr></wbr><span><span>Bar</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1101520356%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="business-bot-manage-bar.html">businessBotManageBar</a><span class="token operator">: </span><a href="../-business-bot-manage-bar/index.html">TdApi.BusinessBotManageBar</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="314817829%2FProperties%2F377608258" anchor-label="canBeDeletedForAllUsers" id="314817829%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="can-be-deleted-for-all-users.html"><span>can</span><wbr></wbr><span>Be</span><wbr></wbr><span>Deleted</span><wbr></wbr><span>For</span><wbr></wbr><span>All</span><wbr></wbr><span><span>Users</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="314817829%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="can-be-deleted-for-all-users.html">canBeDeletedForAllUsers</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1540006316%2FProperties%2F377608258" anchor-label="canBeDeletedOnlyForSelf" id="1540006316%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="can-be-deleted-only-for-self.html"><span>can</span><wbr></wbr><span>Be</span><wbr></wbr><span>Deleted</span><wbr></wbr><span>Only</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Self</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1540006316%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="can-be-deleted-only-for-self.html">canBeDeletedOnlyForSelf</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-313368183%2FProperties%2F377608258" anchor-label="canBeReported" id="-313368183%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="can-be-reported.html"><span>can</span><wbr></wbr><span>Be</span><wbr></wbr><span><span>Reported</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-313368183%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="can-be-reported.html">canBeReported</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="702447986%2FProperties%2F377608258" anchor-label="chatLists" id="702447986%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="chat-lists.html"><span>chat</span><wbr></wbr><span><span>Lists</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="702447986%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="chat-lists.html">chatLists</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="../-chat-list/index.html">TdApi.ChatList</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-924403882%2FProperties%2F377608258" anchor-label="clientData" id="-924403882%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="client-data.html"><span>client</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-924403882%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="client-data.html">clientData</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1891854037%2FProperties%2F377608258" anchor-label="CONSTRUCTOR" id="1891854037%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-o-n-s-t-r-u-c-t-o-r.html"><span><span>CONSTRUCTOR</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1891854037%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="-c-o-n-s-t-r-u-c-t-o-r.html">CONSTRUCTOR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">830601369</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1125796839%2FProperties%2F377608258" anchor-label="defaultDisableNotification" id="-1125796839%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="default-disable-notification.html"><span>default</span><wbr></wbr><span>Disable</span><wbr></wbr><span><span>Notification</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1125796839%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="default-disable-notification.html">defaultDisableNotification</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1479322651%2FProperties%2F377608258" anchor-label="draftMessage" id="-1479322651%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="draft-message.html"><span>draft</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1479322651%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="draft-message.html">draftMessage</a><span class="token operator">: </span><a href="../-draft-message/index.html">TdApi.DraftMessage</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="609893527%2FProperties%2F377608258" anchor-label="emojiStatus" id="609893527%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="emoji-status.html"><span>emoji</span><wbr></wbr><span><span>Status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="609893527%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="emoji-status.html">emojiStatus</a><span class="token operator">: </span><a href="../-emoji-status/index.html">TdApi.EmojiStatus</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="59631466%2FProperties%2F377608258" anchor-label="hasProtectedContent" id="59631466%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-protected-content.html"><span>has</span><wbr></wbr><span>Protected</span><wbr></wbr><span><span>Content</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="59631466%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="has-protected-content.html">hasProtectedContent</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1135282572%2FProperties%2F377608258" anchor-label="hasScheduledMessages" id="1135282572%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-scheduled-messages.html"><span>has</span><wbr></wbr><span>Scheduled</span><wbr></wbr><span><span>Messages</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1135282572%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="has-scheduled-messages.html">hasScheduledMessages</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-741055216%2FProperties%2F377608258" anchor-label="id" id="-741055216%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="id.html"><span><span>id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-741055216%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="id.html">id</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1458105708%2FProperties%2F377608258" anchor-label="isMarkedAsUnread" id="-1458105708%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-marked-as-unread.html"><span>is</span><wbr></wbr><span>Marked</span><wbr></wbr><span>As</span><wbr></wbr><span><span>Unread</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1458105708%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="is-marked-as-unread.html">isMarkedAsUnread</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-201463024%2FProperties%2F377608258" anchor-label="isTranslatable" id="-201463024%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-translatable.html"><span>is</span><wbr></wbr><span><span>Translatable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-201463024%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="is-translatable.html">isTranslatable</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1123308034%2FProperties%2F377608258" anchor-label="lastMessage" id="-1123308034%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="last-message.html"><span>last</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1123308034%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="last-message.html">lastMessage</a><span class="token operator">: </span><a href="../-message/index.html">TdApi.Message</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-517718077%2FProperties%2F377608258" anchor-label="lastReadInboxMessageId" id="-517718077%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="last-read-inbox-message-id.html"><span>last</span><wbr></wbr><span>Read</span><wbr></wbr><span>Inbox</span><wbr></wbr><span>Message</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-517718077%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="last-read-inbox-message-id.html">lastReadInboxMessageId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1934549194%2FProperties%2F377608258" anchor-label="lastReadOutboxMessageId" id="-1934549194%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="last-read-outbox-message-id.html"><span>last</span><wbr></wbr><span>Read</span><wbr></wbr><span>Outbox</span><wbr></wbr><span>Message</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1934549194%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="last-read-outbox-message-id.html">lastReadOutboxMessageId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2003820383%2FProperties%2F377608258" anchor-label="messageAutoDeleteTime" id="-2003820383%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="message-auto-delete-time.html"><span>message</span><wbr></wbr><span>Auto</span><wbr></wbr><span>Delete</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2003820383%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="message-auto-delete-time.html">messageAutoDeleteTime</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="402704632%2FProperties%2F377608258" anchor-label="messageSenderId" id="402704632%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="message-sender-id.html"><span>message</span><wbr></wbr><span>Sender</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="402704632%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="message-sender-id.html">messageSenderId</a><span class="token operator">: </span><a href="../-message-sender/index.html">TdApi.MessageSender</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1373501475%2FProperties%2F377608258" anchor-label="notificationSettings" id="-1373501475%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="notification-settings.html"><span>notification</span><wbr></wbr><span><span>Settings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1373501475%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="notification-settings.html">notificationSettings</a><span class="token operator">: </span><a href="../-chat-notification-settings/index.html">TdApi.ChatNotificationSettings</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1508209866%2FProperties%2F377608258" anchor-label="pendingJoinRequests" id="1508209866%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="pending-join-requests.html"><span>pending</span><wbr></wbr><span>Join</span><wbr></wbr><span><span>Requests</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1508209866%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="pending-join-requests.html">pendingJoinRequests</a><span class="token operator">: </span><a href="../-chat-join-requests-info/index.html">TdApi.ChatJoinRequestsInfo</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1093594773%2FProperties%2F377608258" anchor-label="permissions" id="-1093594773%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="permissions.html"><span><span>permissions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1093594773%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="permissions.html">permissions</a><span class="token operator">: </span><a href="../-chat-permissions/index.html">TdApi.ChatPermissions</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="281941245%2FProperties%2F377608258" anchor-label="photo" id="281941245%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="photo.html"><span><span>photo</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="281941245%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="photo.html">photo</a><span class="token operator">: </span><a href="../-chat-photo-info/index.html">TdApi.ChatPhotoInfo</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1653984453%2FProperties%2F377608258" anchor-label="positions" id="1653984453%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="positions.html"><span><span>positions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1653984453%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="positions.html">positions</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="../-chat-position/index.html">TdApi.ChatPosition</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1054863392%2FProperties%2F377608258" anchor-label="profileAccentColorId" id="1054863392%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="profile-accent-color-id.html"><span>profile</span><wbr></wbr><span>Accent</span><wbr></wbr><span>Color</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1054863392%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="profile-accent-color-id.html">profileAccentColorId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1432633874%2FProperties%2F377608258" anchor-label="profileBackgroundCustomEmojiId" id="1432633874%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="profile-background-custom-emoji-id.html"><span>profile</span><wbr></wbr><span>Background</span><wbr></wbr><span>Custom</span><wbr></wbr><span>Emoji</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1432633874%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="profile-background-custom-emoji-id.html">profileBackgroundCustomEmojiId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1638193573%2FProperties%2F377608258" anchor-label="replyMarkupMessageId" id="-1638193573%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reply-markup-message-id.html"><span>reply</span><wbr></wbr><span>Markup</span><wbr></wbr><span>Message</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1638193573%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="reply-markup-message-id.html">replyMarkupMessageId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-486461317%2FProperties%2F377608258" anchor-label="themeName" id="-486461317%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="theme-name.html"><span>theme</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-486461317%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="theme-name.html">themeName</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="333449111%2FProperties%2F377608258" anchor-label="title" id="333449111%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="title.html"><span><span>title</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="333449111%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="title.html">title</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1653413807%2FProperties%2F377608258" anchor-label="type" id="-1653413807%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="type.html"><span><span>type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1653413807%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="type.html">type</a><span class="token operator">: </span><a href="../-chat-type/index.html">TdApi.ChatType</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1241056561%2FProperties%2F377608258" anchor-label="unreadCount" id="-1241056561%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unread-count.html"><span>unread</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1241056561%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="unread-count.html">unreadCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1239555657%2FProperties%2F377608258" anchor-label="unreadMentionCount" id="-1239555657%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unread-mention-count.html"><span>unread</span><wbr></wbr><span>Mention</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1239555657%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="unread-mention-count.html">unreadMentionCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2024940120%2FProperties%2F377608258" anchor-label="unreadReactionCount" id="2024940120%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unread-reaction-count.html"><span>unread</span><wbr></wbr><span>Reaction</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2024940120%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="unread-reaction-count.html">unreadReactionCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-308797732%2FProperties%2F377608258" anchor-label="videoChat" id="-308797732%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="video-chat.html"><span>video</span><wbr></wbr><span><span>Chat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-308797732%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="video-chat.html">videoChat</a><span class="token operator">: </span><a href="../-video-chat/index.html">TdApi.VideoChat</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1675354384%2FProperties%2F377608258" anchor-label="viewAsTopics" id="-1675354384%2FProperties%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="view-as-topics.html"><span>view</span><wbr></wbr><span>As</span><wbr></wbr><span><span>Topics</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1675354384%2FProperties%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">var </span><a href="view-as-topics.html">viewAsTopics</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="2007215751%2FFunctions%2F377608258" anchor-label="getConstructor" id="2007215751%2FFunctions%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-constructor.html"><span>get</span><wbr></wbr><span><span>Constructor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2007215751%2FFunctions%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="get-constructor.html"><span class="token function">getConstructor</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2041844550%2FFunctions%2F377608258" anchor-label="toString" id="2041844550%2FFunctions%2F377608258" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":telegram-listener-sdk:dokkaHtml/main" data-filterable-set=":telegram-listener-sdk:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-object/to-string.html"><span>to</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2041844550%2FFunctions%2F377608258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telegram-listener-sdk:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-object/to-string.html"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

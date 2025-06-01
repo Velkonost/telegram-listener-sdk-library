@@ -1,0 +1,1 @@
+sourceset_dependencies='{":telegram-listener-sdk:dokkaHtml/main":[]}'
